@@ -1,15 +1,38 @@
 /* global jQuery */
 var $ = jQuery;
 
-$(document).ready(function(e) {
-    ($('nav').find('a').click(function() {
-        $.get(this.href, null, loaded);
+var page = {
+    request: null,
+    main: $('#main'),
 
+};
+
+$(document).ready(function(e) {
+    $('nav').find('a').click(function() {
+        loadingContainer();
+
+        page.request = $.get(this.href, {
+            ajaxloaded: true
+        }, loaded).fail(errorContainer);
         return false;
-    }))
+    });
 });
 
-function loaded(e, d) {
+function loaded(data, status, container) {
+
+
+}
+
+function errorContainer(e, f, g) {
     console.log(e);
-    console.log(d);
+}
+
+function loadingContainer() {
+    if (page.request != null) {
+        page.request.abort();
+    }
+}
+
+function newContainer(data) {
+
 }

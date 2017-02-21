@@ -20,6 +20,7 @@ html {
 
 body {
     margin: 0;
+    height: 100vh;
 }
 
 article,
@@ -40,6 +41,12 @@ summary {
 #masthead>div.row>div {
     text-align: center;
     width: 100%;
+}
+
+.with-background {
+    background: url(/wp-content/themes/shapely/inc/img/bg01_cont.jpg) left top repeat;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
 }
 
 #masthead {
@@ -626,10 +633,6 @@ a:active {
     font-weight: 300;
 }
 
-.site-title:hover {
-    color: #333;
-}
-
 #site-navigation .module.left {
     padding-left: 15px;
 }
@@ -963,8 +966,18 @@ body {
     font-size: 14px;
     line-height: 24px;
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #001c28;
+    color: #fff;
     overflow-x: hidden;
+}
+
+span.description {
+    top: -10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+div.site-title-container {
+    padding: 1.5em 0;
 }
 
 ul {
@@ -1220,7 +1233,6 @@ a:visited {
 }
 
 a:hover {
-    color: #5d47d7;
     text-decoration: none;
 }
 
@@ -4107,7 +4119,7 @@ blockquote:after {
 }
 
 .post-content .entry-content p {
-    color: #8c979e;
+    color: #eee;
 }
 
 .post-content.post-grid-small .shapely-category {

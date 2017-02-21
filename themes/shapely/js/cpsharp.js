@@ -2,37 +2,45 @@
 var $ = jQuery;
 
 var page = {
+    navlinks: null,
     request: null,
-    main: $('#main'),
+    main: null,
+    cached: null,
 
+    init: function() {
+        page.main = $('#main');
+        page.cached = new Array();
+        page.navlinks = $('nav').find('a');
+    },
+
+    beginLoad: function() {
+        if (page.request != null) {
+            page.request.abort();
+        }
+    },
+
+    errorLoad: function(e) {
+        console.log(e);
+    },
+
+    successLoad: function(data, status, container) {
+        page.request = null;
+
+        page.main.html(data);
+    }
 };
 
 $(document).ready(function(e) {
-    $('nav').find('a').click(function() {
-        loadingContainer();
+    page.init();
+    page.navlinks.click(function() {
+        page.beginLoad();
 
         page.request = $.get(this.href, {
-            ajaxloaded: true
-        }, loaded).fail(errorContainer);
+                ajaxloaded: true
+            }, page.successLoad)
+            .fail(function(e) {
+                page.errorLoad(e)
+            });
         return false;
     });
 });
-
-function loaded(data, status, container) {
-
-
-}
-
-function errorContainer(e, f, g) {
-    console.log(e);
-}
-
-function loadingContainer() {
-    if (page.request != null) {
-        page.request.abort();
-    }
-}
-
-function newContainer(data) {
-
-}

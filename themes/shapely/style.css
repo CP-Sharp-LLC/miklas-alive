@@ -18,7 +18,8 @@ html {
   -ms-text-size-adjust: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  height: 100vh; }
 
 article,
 aside,
@@ -37,6 +38,11 @@ summary {
 #masthead > div.row > div {
   text-align: center;
   width: 100%; }
+
+.with-background {
+  background: url(/wp-content/themes/shapely/inc/img/bg01_cont.jpg) left top repeat;
+  background-color: transparent;
+  border: 1px solid black; }
 
 #masthead {
   background: url(/wp-content/themes/shapely/inc/img/bg01_cont.jpg) left top repeat;
@@ -503,9 +509,6 @@ a:active {
   -moz-transition: all 0.3s ease;
   font-weight: 300; }
 
-.site-title:hover {
-  color: #333; }
-
 #site-navigation .module.left {
   padding-left: 15px; }
 
@@ -760,8 +763,16 @@ body {
   font-size: 14px;
   line-height: 24px;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #001c28;
+  color: #fff;
   overflow-x: hidden; }
+
+span.description {
+  top: -10px;
+  position: relative;
+  text-transform: uppercase; }
+
+div.site-title-container {
+  padding: 1.5em 0; }
 
 ul {
   list-style: disc; }
@@ -970,7 +981,6 @@ a:visited {
   opacity: .9; }
 
 a:hover {
-  color: #5d47d7;
   text-decoration: none; }
 
 blockquote {
@@ -3334,7 +3344,7 @@ blockquote:after {
   color: #001c28; }
 
 .post-content .entry-content p {
-  color: #8c979e; }
+  color: #eee; }
 
 .post-content.post-grid-small .shapely-category {
   width: 70%; }

@@ -13,12 +13,7 @@ if( !$ajaxLoaded )
 {
 	get_header();
 } ?>
-	<div class="row">
-		<?php
-		if ( $layout_class == 'sidebar-left' ):
-			get_sidebar();
-		endif;
-		?>
+	<div class="row with-background">
 		<div id="primary"><?php
 			while ( have_posts() ) : the_post();
 

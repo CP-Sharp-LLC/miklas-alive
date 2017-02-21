@@ -27,10 +27,11 @@
 	<header id="masthead" class="site-header" role="banner">
         <div class="row">
             <div class="module left site-title-container">
-		        <?php shapely_get_header_logo(); ?>
+		        <?php shapely_get_header_logo(); ?><br />
+		        <span class='description'><?php echo get_bloginfo ( 'description' )?></span>
             </div>
         </div>
-        <div id="" class="" style="background: rgb(0, 0, 0); border-width: 0px 0px 1px; border-style: solid; border-color: rgb(30,30,30);"></div>        
+        <div id="" class="" style="background: rgb(0, 0, 0); border-width: 0px 0px 1px; border-style: solid; border-color: rgb(15,15,15);"></div>
         <div class="nav-container">
             <nav id="site-navigation" class="main-navigation" role="navigation">
                 <div class="container nav-bar">
